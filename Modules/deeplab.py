@@ -19,6 +19,14 @@ class SemanticSeg(nn.Module):
     def __getitem__(self, item):
         return self.model
 
+    def load_deeplab_implementation(self, backbone_name, output_stride, pretrained=False):
+        if output_stride == 8:
+            replace_stride_with_dilation = [False, True, True]
+            aspp_dilate = [12, 24, 36]
+        else:
+            replace_stride_with_dilation = [False, False, True]
+            aspp_dilate = [6, 12, 18]
+
     # Add the Backbone option in the parameters
     def load_model(self, pretrained=False):
         if pretrained:
