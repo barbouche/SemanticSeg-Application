@@ -1,0 +1,41 @@
+aniso8601==8.0.0
+certifi==2020.6.20
+cffi==1.14.0
+click==7.1.2
+cloudpickle @ file:///home/conda/feedstock_root/build_artifacts/cloudpickle_1593623337153/work
+cycler==0.10.0
+cytoolz==0.10.1
+dask @ file:///home/conda/feedstock_root/build_artifacts/dask-core_1593753420471/work
+decorator==4.4.2
+Flask==1.1.2
+Flask-RESTful==0.3.8
+imagecodecs-lite @ file:///D:/bld/imagecodecs-lite_1591047467199/work
+imageio @ file:///home/conda/feedstock_root/build_artifacts/imageio_1594044661732/work
+itsdangerous==1.1.0
+Jinja2==2.11.2
+kiwisolver==1.2.0
+MarkupSafe==1.1.1
+matplotlib @ file:///C:/ci/matplotlib-base_1592846129657/work
+mkl-fft==1.1.0
+mkl-random==1.1.1
+mkl-service==2.3.0
+networkx==2.4
+numpy==1.18.5
+olefile==0.46
+Pillow @ file:///C:/ci/pillow_1594299032796/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pyparsing==2.4.7
+python-dateutil==2.8.1
+pytz==2020.1
+PyWavelets==1.1.1
+PyYAML==5.3.1
+scikit-image==0.17.2
+scipy @ file:///C:/ci/scipy_1592930618155/work
+six==1.15.0
+tifffile @ file:///home/conda/feedstock_root/build_artifacts/tifffile_1591280222285/work
+toolz==0.10.0
+torch==1.5.1
+torchvision==0.6.1
+tornado==6.0.4
+Werkzeug==1.0.1
+wincertstore==0.2
