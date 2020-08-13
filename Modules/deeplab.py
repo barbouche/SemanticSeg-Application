@@ -5,6 +5,9 @@ import numpy as np
 import cv2
 import torchvision.models.segmentation as models
 from Dataset.image_data import SegmentationSample
+from BackBones.resnet_calls import load_resnet_101
+from DeepLabV3Implementation.deeplab_implementation import DeepLabHead, DeepLabV3
+from SegmentLayers.layers_segmentation import
 
 class SemanticSeg(nn.Module):
     def __init__(self, pretrained: bool, device):
@@ -28,11 +31,22 @@ class SemanticSeg(nn.Module):
             aspp_dilate = [6, 12, 18]
 
     # Add the Backbone option in the parameters
-    def load_model(self, pretrained=False):
-        if pretrained:
-            model = models.deeplabv3_resnet101(pretrained=True)
+    def load_model(self, output_stride, pretrained_backbone):
+        if output_stride == 8:
+            replace_stride_with_dilation = [False, True, True]
+            aspp_dilate = [12, 24, 36]
         else:
-            model = models.deeplabv3_resnet101()
+            replace_stride_with_dilation = [False, False, True]
+            aspp_dilate = [6, 12, 18]
+
+        backbone = load_resnet_101(replace_stride_with_dilation)
+        inplanes = 2048
+        low_level_planes = 256
+
+        # DeepLab V3 version
+        return_layers = {'layer4': 'out'}
+        classifier = DeepLabHead(inplanes, 21, aspp_dilate)
+        backbone = IntermediateLayerGetter(backbone, return_layers=return_layers)
 
         model.to(self.device)
         # dummy_input = torch.randn(1, 3, 224, 224, dtype=torch.float).to(self.device)
