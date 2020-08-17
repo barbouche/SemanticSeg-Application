@@ -22,13 +22,13 @@ if __name__ == '__main__':
     image = SegmentationSample(root_dir=PATH, image_file='display3.jpeg', device='cpu')
 
     #image.print_processed()
+    # A small change here
+    #model = SemanticSeg(pretrained=True, device='cpu')
+    #res = model.run_inference(image)
 
-    model = SemanticSeg(pretrained=True, device='cpu')
-    res = model.run_inference(image)
-
-    plt.imshow(res)
-    plt.pause(5)
-    plt.figure()
+    #plt.imshow(res)
+    #plt.pause(5)
+    #plt.figure()
 
     # PATH = 'C:\\Users\\ayman/.cache/torch\\hub\\checkpoints\\deeplabv3_resnet101_coco-586e9e4e.pth'
     # model = models.deeplabv3_resnet101(pretrained=True)
