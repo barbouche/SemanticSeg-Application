@@ -21,6 +21,8 @@ if __name__ == '__main__':
     PATH = 'C:\\Users\\ayman\\OneDrive\\Documents\\Instance Segmentation\\Images\\Test Images Skype Stream Part 1\\Person-2-sample'
     image = SegmentationSample(root_dir=PATH, image_file='display3.jpeg', device='cpu')
 
+    # Bonjour
+
     #image.print_processed()
     # A small change here
     #model = SemanticSeg(pretrained=True, device='cpu')
